@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.DataContexts;
@@ -43,6 +44,10 @@ public static class DependencyInjection
     private static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
-        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IRepository<User>, Repository<User>>();
+        services.AddScoped<IRepository<Notification>, Repository<Notification>>();
+        services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();
+
     }
 }
