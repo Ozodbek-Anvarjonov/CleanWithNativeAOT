@@ -1,6 +1,7 @@
 ﻿using Domain.Common.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Persistence.UnitOfWork.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -17,7 +17,7 @@ public class UnitOfWork(
 
     public IRepository<RefreshToken> RefreshTokens { get; } = refreshTokens;
 
-    public IRepository<Notification> Notifications { get } = notifications;
+    public IRepository<Notification> Notifications { get; } = notifications;
     //
     private IDbContextTransaction? currentTransaction;
     private bool disposed;
